@@ -12,7 +12,7 @@ app.get("/status", (_, res) => {
   res.type("text/plain").send("ok");
 });
 
-app.get("/", async (req, res) => {
+app.get("/*", async (req, res) => {
   const raw = req.query.url;
   if (!raw) return res.status(400).send("Missing ?url=");
 
